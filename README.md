@@ -1,4 +1,4 @@
 photogur
 ========
 
-A simple recreation of Imgur using Ruby and Rails. 
+Bitmaker Labs assignment: Create an Imgur copy.
