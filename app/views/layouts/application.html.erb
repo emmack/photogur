@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<p class="userinfo">
+
+      <% if current_user %>
+        Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+          <%= link_to "Profile", current_user %> 
+      <% else %>
+        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+      <% end %>
+</p>
+
+  <title>Photogur</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+
+
+
+
+<body>
+<div class ="camera">
+<img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10393957_10152595656120342_400159838233260410_n.jpg?oh=7a6b17467206b6b0f47c7659af283a76&oe=54712F58&__gda__=1416511794_12f2f4225a2d669bfdf9c6d2a9eb61da">
+</div>
+
+<div class ="nav">
+<%= link_to "Home", "/" %> | <%= link_to "New Picture", "/pictures/new" %> | <%= link_to "Top Photos", "/pictures/new" %> 
+</div>
+
+
+<% if flash[:notice] %>
+      <p id="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:alert] %>
+      <p id="alert"><%= flash[:alert] %></p>
+<% end %>
+
+
+<%= yield %>
+
+
+
+<%= yield %>
+
+</body>
+</html>
+
+

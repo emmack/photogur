@@ -1,0 +1,15 @@
+<h1> Profile </h1>
+
+<%= link_to "Back to Products", products_url %>  | 
+
+
+
+    
+    <p class="userinfo">
+
+      <% if current_user %>
+       Email: <%= current_user.email %>.<br>
+       Username: <%= current_user.name%>.<br>
+       Image:  <img src= "<%= current_user.avatar.url %>"> 
+      <% end %>
+</p>
